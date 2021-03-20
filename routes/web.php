@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    
-    $allPosts = [
-        ['id' => 1, 'title' => 'laravel', 'posted_by' => 'Ahmed', 'created_at' => '2021-03-20'],
-        ['id' => 2, 'title' => 'PHP', 'posted_by' => 'Mohamed', 'created_at' => '2021-04-15'],
-        ['id' => 3, 'title' => 'Javascript', 'posted_by' => 'Ali', 'created_at' => '2021-06-01'],
-    ];
-
-    return view('test',[
-        'posts' => $allPosts
-    ]);
-});
+Route::get('/test', [TestController::class, 'testAction']);
+// Route::get('/test', 'TestController@testAction'); old syntax
 
 Route::get('/hello-from-framework', function () {
     return 'hello all';
