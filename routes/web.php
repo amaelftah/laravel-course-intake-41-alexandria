@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', [TestController::class, 'testAction']);
+Route::get('/posts', [PostController::class, 'index']);
 // Route::get('/test', 'TestController@testAction'); old syntax
 
 Route::get('/hello-from-framework', function () {
