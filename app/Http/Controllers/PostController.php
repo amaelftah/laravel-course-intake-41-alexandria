@@ -14,7 +14,7 @@ class PostController extends Controller
             ['id' => 3, 'title' => 'Javascript', 'posted_by' => 'Ali', 'created_at' => '2021-06-01'],
         ];
 
-        return view('posts.index',[
+        return view('posts.index', [
             'posts' => $allPosts
         ]);
     }
@@ -23,7 +23,7 @@ class PostController extends Controller
     {
         $post = ['id' => 1, 'title' => 'laravel', 'description' => 'laravel is awsome framework', 'posted_by' => 'Ahmed', 'created_at' => '2021-03-20'];
 
-        return view('posts.show',[
+        return view('posts.show', [
             'post' => $post,
         ]);
     }
