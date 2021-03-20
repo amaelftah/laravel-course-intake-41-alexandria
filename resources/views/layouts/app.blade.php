@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1">All Posts</span>
+        <a href="{{route('posts.index')}}" class="navbar-brand mb-0 h1">All Posts</a>
       </nav>
 
         <div class="container" style="margin-top:40px;">

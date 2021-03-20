@@ -23,7 +23,7 @@
         <td>{{ $post['posted_by'] }}</td>
         <td>{{ $post['created_at'] }}</td>
         <td>
-          <button type="button" class="btn btn-info" style="margin-bottom: 20px;">View</button>
+          <a href="{{ route('posts.show',['post' => $post['id']]) }}" class="btn btn-info" style="margin-bottom: 20px;">View</a>
           <button type="button" class="btn btn-secondary" style="margin-bottom: 20px;">Edit</button>
           <button type="button" class="btn btn-danger" style="margin-bottom: 20px;">Delete</button>
         </td>
