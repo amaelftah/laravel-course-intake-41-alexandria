@@ -18,4 +18,13 @@ class PostController extends Controller
             'posts' => $allPosts
         ]);
     }
+
+    public function show($postId)
+    {
+        $post = ['id' => 1, 'title' => 'laravel', 'description' => 'laravel is awsome framework', 'posted_by' => 'Ahmed', 'created_at' => '2021-03-20'];
+
+        return view('posts.show',[
+            'post' => $post,
+        ]);
+    }
 }
