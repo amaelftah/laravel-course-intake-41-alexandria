@@ -34,9 +34,27 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store()
+    public function store(Request $request) // == calling request()
     {
-        //logic to insert request data into db
+        // $requestData = request()->all();
+        
+        //another syntax
+        // $title = request()->title;
+        // $description = request()->description;
+
+        $requestData = $request->all();
+        // Post::create([
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        // ]);
+
+        Post::create($requestData);
+
+        //another syntax
+        // $post = new Post;
+        // $post->title = $request->title;
+        // $post->description = $request->description;
+        // $post->save();
 
         return redirect()->route('posts.index');
     }
