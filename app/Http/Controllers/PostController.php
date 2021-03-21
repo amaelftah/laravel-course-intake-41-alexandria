@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -31,7 +32,9 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create',[
+            'users' => User::all()
+        ]);
     }
 
     public function store(Request $request) // == calling request()
@@ -43,6 +46,7 @@ class PostController extends Controller
         // $description = request()->description;
 
         $requestData = $request->all();
+
         // Post::create([
         //     'title' => $request->title,
         //     'description' => $request->description,
