@@ -39,6 +39,14 @@ class PostController extends Controller
 
     public function store(Request $request) // == calling request()
     {
+        $request->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:3'],
+        ],[
+            'title.required' => 'show this message',
+            'title.min' => 'override min validation rule default message'
+        ]);
+
         // $requestData = request()->all();
         
         //another syntax
