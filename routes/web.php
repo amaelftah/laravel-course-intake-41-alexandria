@@ -27,3 +27,7 @@ Route::post('/posts',[PostController::class, 'store'])->name('posts.store');
 Route::get('/hello-from-framework', function () {
     return 'hello all';
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

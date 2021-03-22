@@ -38,7 +38,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function store(StorePostRequest $request) // == calling request()
+    public function store(StorePostRequest $request) // the StorePostRequest object is resolved by ServiceContainer
     {
         // $requestData = request()->all();
 
